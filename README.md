@@ -1,4 +1,4 @@
-# docker-xorg-nvidia
+# Xorg with proprietary Nvidia driver docker image
 
 ## About
 Docker image with [Xorg](https://wiki.archlinux.org/index.php/Xorg) and proprietary [Nvidia driver](https://wiki.archlinux.org/index.php/NVIDIA) for running GUI applications with Nvidia GPU support.
