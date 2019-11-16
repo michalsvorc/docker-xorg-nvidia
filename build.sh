@@ -1,12 +1,14 @@
 #!/bin/bash
 # Author: Michal Svorc <michal@svorc.sk>
-# Build docker image
+# Build Docker image
 
+# Declare variables
 image_name='xorg-nvidia'
 distribution=ubuntu
 distribution_tag=18.04
 nvidia_driver_version=$(nvidia-smi --query-gpu=driver_version --format=csv,noheader)
 
+# Build
 docker build \
     --tag "${image_name}:${distribution_tag}-${distribution}-multiarch" \
     --build-arg distribution=${distribution} \
