@@ -15,7 +15,7 @@ Select git branch with distribution tag and run `build.sh` helper script.
 ## Usage with another Dockerfile
 Example sourcing `xorg-nvidia` as base image in Docker image with GUI application:
 ```Dockerfile
-FROM xorg-nvidia:${<distribution_tag>}
+FROM xorg-nvidia:<distribution_tag>
 
 # Build-time variables
 ARG user_name
@@ -27,10 +27,9 @@ RUN useradd -ms /bin/bash ${user_name} \
     && usermod -aG audio_host ${user_name} \
     && usermod -aG audio ${user_name} \
     && usermod -aG video ${user_name}
+    ...
 
-...
-
-ENTRYPOINT ["<GUI-application>"]
+ENTRYPOINT ["<GUI application executable>"]
 ```
 
 User running processes in Docker container should belong to `video`, `audio` groups. 
