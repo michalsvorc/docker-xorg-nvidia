@@ -1,7 +1,7 @@
 ARG distribution
-ARG distribution_tag
+ARG distribution_version
 
-FROM ${distribution}:${distribution_tag}
+FROM ${distribution}:${distribution_version}
 
 ARG nvidia_driver_version
 ARG nvidia_driver_installer=nvidia_installer.run
@@ -21,13 +21,13 @@ RUN dpkg --add-architecture i386 \
 
 # Nvidia driver
 RUN wget \
-    # Download driver
+    # Download Nvidia driver
     -c http://us.download.nvidia.com/XFree86/Linux-x86_64/${nvidia_driver_version}/NVIDIA-Linux-x86_64-${nvidia_driver_version}.run \
     -O /tmp/${nvidia_driver_installer} \
     --no-verbose \
     --show-progress \
     --progress=bar:force \
-    # Install driver
+    # Install Nvidia driver
     && sh /tmp/${nvidia_driver_installer} \
     --accept-license \
     --silent \
