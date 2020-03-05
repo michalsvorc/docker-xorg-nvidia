@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Michal Svorc <michal@svorc.sk>
+# Author: Michal Svorc <michalsvorc.com>
 # Build Docker image
 
 # Utilities
