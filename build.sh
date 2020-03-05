@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Michal Svorc <michal@svorc.sk>
+# Author: Michal Svorc <michalsvorc.com>
 # Build Docker image
 
 # Utilities
@@ -16,7 +16,7 @@ distribution_version='18.04'
 # Build variables
 nvidia_driver_version=$(get_nvidia_driver_version)
 image_tag="${distribution}-${distribution_version}-multiarch"
-image_tag_build="${image_tag}-${nvidia_driver_version}"
+image_tag_build="${distribution}-${distribution_version}-${nvidia_driver_version}-multiarch"
 
 # Build
 printf "Nvidia driver version: %s\n" ${nvidia_driver_version}
