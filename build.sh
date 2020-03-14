@@ -10,21 +10,22 @@ get_nvidia_driver_version() {
 
 # Base variables
 image_name='xorg-nvidia'
-distribution='ubuntu'
-distribution_version='18.04'
+base_image='ubuntu'
+base_image_tag='18.04'
 
 # Build variables
 nvidia_driver_version=$(get_nvidia_driver_version)
-image_tag="${distribution}-${distribution_version}"
+image_tag="${base_image}-${base_image_tag}"
 image_tag_build="${image_tag}-${nvidia_driver_version}"
 
-# Build
+# Print Nvidia driver version
 printf "Nvidia driver version: %s\n" ${nvidia_driver_version}
 
+# Build
 docker build \
     --tag "${image_name}:${image_tag_build}" \
-    --build-arg distribution=${distribution} \
-    --build-arg distribution_version=${distribution_version} \
+    --build-arg base_image=${base_image} \
+    --build-arg base_image_tag=${base_image_tag} \
     --build-arg nvidia_driver_version=${nvidia_driver_version} \
     .
 

@@ -1,7 +1,7 @@
-ARG distribution
-ARG distribution_version
+ARG base_image
+ARG base_image_tag
 
-FROM ${distribution}:${distribution_version}
+FROM ${base_image}:${base_image_tag}
 
 ARG nvidia_driver_version
 ARG nvidia_driver_installer=nvidia_installer.run
