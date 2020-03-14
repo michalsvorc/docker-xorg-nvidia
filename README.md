@@ -10,7 +10,7 @@ Host system must have proprietary Nvidia driver installed. Driver version is det
 [ALSA](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture) audio support by default.
 
 ## Build
-Select git branch with distribution tag and run `build.sh` helper script.
+Clone repository, switch to preferred branch and run `build.sh` script.
 
 ## Usage with another Dockerfile
 Example sourcing `xorg-nvidia` as base image in Docker image with GUI application:
