@@ -23,6 +23,7 @@ printf "Nvidia driver version: %s\n" ${nvidia_driver_version}
 
 # Build and tag finished build
 docker build \
+    --no-cache \
     --tag "${image_name}:${image_tag_build}" \
     --build-arg base_image=${base_image} \
     --build-arg base_image_tag=${base_image_tag} \
