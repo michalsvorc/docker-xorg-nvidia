@@ -24,7 +24,7 @@ parent_image_tag='20.04'
 
 # Build arguments
 image_name='michalsvorc/xorg-nvidia'
-image_tag="${parent_image_name}-${parent_image_tag}"
+image_tag="${parent_image_name}-${parent_image_tag}-multiarch"
 nvidia_driver_version=$(_get_nvidia_driver_version)
 image_tag_build="${image_tag}-${nvidia_driver_version}"
 

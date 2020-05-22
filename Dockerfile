@@ -7,13 +7,15 @@ ARG nvidia_driver_version
 ARG nvidia_driver_installer=nvidia_installer.run
 
 # Install packages
-RUN apt-get update \
+RUN dpkg --add-architecture i386 \
+    && apt-get update \
     && apt-get install -y \
     alsa \
     alsa-utils \
-    wget \
-    libsdl2-mixer-2.0-0 \
+    libc6:i386 \
     libsdl2-image-2.0-0 \
+    libsdl2-mixer-2.0-0 \
+    wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
