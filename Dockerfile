@@ -8,7 +8,8 @@ ARG nvidia_driver_installer=nvidia_installer.run
 
 # Install packages
 RUN apt-get update \
-    && apt-get install -y \
+    && DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y \
     alsa \
     alsa-utils \
     wget \
