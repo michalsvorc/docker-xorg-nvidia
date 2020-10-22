@@ -13,6 +13,7 @@ RUN dpkg --add-architecture i386 \
     && apt-get install -y \
     alsa \
     alsa-utils \
+    libc6:i386 \
     libsdl2-image-2.0-0 \
     libsdl2-mixer-2.0-0 \
     wget \
